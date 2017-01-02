@@ -1,0 +1,49 @@
+{% extends 'alumni/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <div class="ui grid">
+        <div class="ui row"></div>
+        <div class="ui row"></div>
+        <div class="ui centered row">
+            <div class="ui segment">
+                <div class="ui twelve wide column">
+                    <div class="ui grid">
+                        <div class="ui row">
+
+                        </div>
+                        <div class="ui row">
+                            <div class="ui divided items">
+                                <div class="item">
+                                    <div class="image">
+
+                                        <img src="{% static 'alumni/webapp.svg' %}">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="ui header">Alan Hemsworth</h3>
+                                        <div class="meta">
+                                            <span class="cinema">Lawyer, Book Lover</span>
+                                        </div>
+                                        <div class="description">
+                                            <h4 class="ui header">
+                                                Alan is a Lawyer based in New York with a massive love of books.
+                                            </h4>
+                                        </div>
+                                        <div class="extra">
+                                            <div class="ui right floated primary button">
+                                                See Details
+                                                <i class="right chevron icon"></i>
+                                            </div>
+                                            <div class="ui label">New York</div>
+                                            <div class="ui label">Lawyer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

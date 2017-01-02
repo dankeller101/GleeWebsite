@@ -1,0 +1,59 @@
+{% extends 'alumni/base.html' %}
+
+{% block content %}
+    <div class="ui grid">
+        <div class="ui row">
+
+        </div>
+        <div class="ui row">
+
+        </div>
+        <div class="ui centered row">
+            <div class="ui six wide column">
+                <div class="ui segment">
+                    <div class="ui inverted blue segment">
+                        <h2 class="ui centered header">
+                            YGC Alumni Database
+                        </h2>
+                    </div>
+                    <form class="ui form">
+                        <div>
+                            <lable class="ui label">
+                                Username
+                            </lable>
+                            <input type="text"/>
+                        </div>
+
+                        <div>
+                            <lable class="ui label">
+                                Password
+                            </lable>
+
+                            <input type="password"/>
+                        </div>
+                        <div class="ui grid">
+                            <div class="ui centered row">
+                                <div class="ui four wide column">
+                                    <br>
+                                    <button class="ui green button">
+                                        Enter
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="ui row" style="margin-top: -10px;">
+                                <div class="ui eight wide column">
+                                    <label class="ui label">Don't have an account?</label><br>
+                                    <a>Register an Account</a>
+                                </div>
+                                <div class="ui eight wide column">
+                                    <label class="ui label">Forgot your password?</label>
+                                    <a>Password Recovery</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'alumni/base.html' %}
+
+{% block content %}
+    <div class="ui grid">
+        <div class="ui row"></div>
+        <div class="ui row"></div>
+        <div class="ui centered row">
+            <div class="ui four wide column"></div>
+            <div class="ui segment">
+                <div class="ui twelve wide column">
+                    <div class="ui celled grid">
+                        <div class="ui four wide column">
+                            {% load static %}
+                            <img class="ui medium image" src="{% static 'alumni/webapp.svg' %}">
+                        </div>
+                        <div class="ui twelve wide column">
+                            <h1 class="ui centered header">
+                                Christ Church Choir
+                            </h1>
+                            <h2 class="ui header">Statistics</h2>
+                            <div class="ui statistics">
+                                <div class="statistic">
+                                    <div class="value">
+                                        22
+                                    </div>
+                                    <div class="label">
+                                        Members
+                                    </div>
+                                </div>
+                                <div class="statistic">
+                                    <div class="value">
+                                        31,200
+                                    </div>
+                                    <div class="label">
+                                        Age Range
+                                    </div>
+                                </div>
+                                <div class="statistic">
+                                    <div class="value">
+                                        22
+                                    </div>
+                                    <div class="label">
+                                        Age
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui three tiny statistics">
+                                <div class="ui tiny statistic">
+                                    <div class="value">
+                                        Franz Ferdinand
+                                    </div>
+                                    <div class="label">
+                                        Conductor
+                                    </div>
+                                </div>
+                                <div class="statistic">
+                                    <div class="value">
+                                        Baroque Pop
+                                    </div>
+                                    <div class="label">
+                                        Repertoire
+                                    </div>
+                                </div>
+                                <div class="statistic">
+                                    <div class="value">
+                                        New York, NY
+                                    </div>
+                                    <div class="label">
+                                        Location
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

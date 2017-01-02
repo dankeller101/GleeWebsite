@@ -1,0 +1,52 @@
+{% extends 'alumni/base.html' %}
+
+{% block content %}
+    <div class="ui grid">
+        <div class="ui row"></div>
+        <div class="ui row"></div>
+        <div class="ui centered row">
+            <div class="ui four wide column"></div>
+            <div class="ui segment">
+                <div class="ui twelve wide column">
+                    <div class="ui celled grid">
+                        <div class="ui row">
+                            <div class="ui four wide column">
+                                {% load static %}
+                                <img src="{% static 'alumni/webapp.svg' %}">
+                            </div>
+                            <div class="ui twelve wide column" style="margin-left:20px;">
+                                <div class="ui grid">
+                                    <div class="ui row">
+                                        <h1 class="ui centered header">Alan Hemsworth</h1>
+                                    </div>
+                                    <div class="ui row">
+                                        <h3 class="ui header">About Alan</h3>
+                                        <h4>Alan is a well dressed man with a sense of adventure.<br>
+                                        Everyone wants to be like Alan!</h4>
+                                    </div>
+                                    <div class="ui row">
+                                        <h3 class="ui header">How Alan can Help!</h3>
+                                        <h4>Alan has been a lawyer for 46 years, and is happy to talk about law!</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui row">
+                            <div class="ui eight wide column">
+                                <h3 class="ui header">Contact Info</h3>
+                                fakeemail@fakeemail.com <br>
+                                1-555-555-5555 <br>
+                                555 Fake Avenue <br>
+                                Fake Town, USA <br>
+                            </div>
+                            <div class="ui eight wide column">
+                                <h3 class="ui header">Options</h3>
+                                <button class="ui small blue button">Bookmark!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

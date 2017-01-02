@@ -1,0 +1,35 @@
+{% extends 'alumni/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <div class="main ui container">
+    <div class="ui grid">
+        <div class="ui row"></div>
+        <div class="ui row"></div>
+        <div class="ui centered row">
+                <div class="ui twelve wide column">
+                    <div class="ui segment">
+                    <table class="ui celled padded table">
+                        <thead>
+                            <tr>
+                                <th>Chorus Name</th>
+                                <th>Located</th>
+                                <th>Repertoire</th>
+                                <th>More Info</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Christ Church</td>
+                                <td>New York, New York</td>
+                                <td>Baroque Pop</td>
+                                <td><button class="ui small blue button">More Info</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
