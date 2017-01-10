@@ -1,0 +1,42 @@
+{% extends 'alumni/base.html' %}
+
+{% block content %}
+    <div class="ui grid">
+        <div class="ui row">
+
+        </div>
+        <div class="ui row">
+
+        </div>
+        <div class="ui centered row">
+            <div class="ui six wide column">
+                <div class="ui segment">
+                    <h2 class="ui header">Register Normally?</h2>
+                        <form class="ui form">
+                            <div>
+                                <lable class="ui label">
+                                    Email
+                                </lable>
+                                <input type="text"/>
+                            </div>
+                            <div>
+                                <lable class="ui label">
+                                    Password
+                                </lable>
+                                <input type="password"/>
+                            </div>
+                        </form>
+                    <div class="ui horizontal divider">
+                        Or
+                    </div>
+                    <h2 class="ui header">Register with LinkedIn?</h2>
+{#                    TODO:  FIX client ID, etc.#}
+                    {% load static %}
+                    <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=775rr0dby015ec&redirect_uri=https%3A%2F%2Fwww.example.com%2Fauth%2Flinkedin&state=987654321&scope=r_basicprofile">
+                        <img src="{% static 'alumni/Sign-in-Small---Default.png' %}" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

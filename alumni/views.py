@@ -1,11 +1,14 @@
+from django.contrib.sites import requests
 from django.shortcuts import render
 from django.template import loader
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseBadRequest
 from .models import Chorus, Member, unapprovedMember
+from django.contrib.auth.models import User
 import json
 import alumni.utils
+import requests
 
 # Create your views here.
 
@@ -90,9 +93,50 @@ def alumni_detail(request, alumni_pk):
         context['alumnus'] = alumnus
         return render(request, 'alumni/alumni_detail.html', context)
 
+def registration(request):
+    return render(request, 'alumni/register.html', [])
 
-def admin_page(request):
-    return render(request, 'alumni/admin_page.html', [])
+def register(request):
+    if request.method == "POST":
+        user = User()
+        user.username = request.POST['email']
+        user.email = request.POST['email']
+        user.set_password(request.POST['password'])
+        user.save()
+        newMember = unapprovedMember()
+        newMember.user = user
+        newMember.save()
+        return render(request, 'alumni/homepage.html', [])
+    elif request.method == "GET":
+        initialState = "10"
+        if request.GET['state'] != initialState:
+            return HttpResponseBadRequest("State does not match, likely a CSRF attack.")
+        if not request.GET['code']:
+            return HttpResponseBadRequest("User rejected Authorization")
+        post_data = {
+            'code': request.GET['code'],
+            'grant_type': 'authorization_code',
+            'redirect_uri': 'Same as before', #TODO: fix these params
+            'client_id': '775rr0dby015ec',
+            'client_secret': '2w7UohNJkA5NRyyI',
+        }
+        response = requests.post('https://linkedin.com/oauth/v2/accessToken', data=post_data)
+        content = json.loads(response.content)
+        profileInfo = alumni.utils.requestingLinkedinProfileInf(content['access_token'])
+        user = User()
+        user.username = profileInfo['public-profile-url']
+        user.set_password(profileInfo['site-standard-profile-request'] + profileInfo['id'])
+        user.save()
+        #TODO: fill in new member with profile info
+        newMember = unapprovedMember()
+        newMember.user = user
+        newMember.save()
+        return render(request, 'alumni/homepage.html', [])
+    else:
+        context = {}
+        context['error_message'] = "Registration failed due to a bad Request."
+        return render(request, 'alumni/error_page.html', context)
+
 
 #FOR AJAX ADMIN SECTION
 

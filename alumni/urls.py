@@ -5,14 +5,16 @@ from . import views
 urlpatterns = [
     url(r'^$', views.opening_page, name='greeting'),
     url(r'^loginform', views.login_form, name='login_form'),
+
+    url(r'^registration', views.registration, name='register_form'),
+    url(r'^register', views.register, name='register'),
+
     url(r'^attempt_logout', views.attempt_logout, name='attempt_logout'),
+
     url(r'^chorus_index', views.chorus_index, name='chorus_index'),
     url(r'^chorus_detail/(?P<chorus_pk>[0-9]+)', views.chorus_detail, name='chorus_detail'),
     url(r'^alumni_index', views.alumni_index, name='alumni_index'),
     url(r'^alumni_detail/(?P<alumni_pk>[0-9]+)', views.alumni_detail, name='alumni_detail'),
-
-    #admin page
-    url(r'alumni_admin', views.admin_page, name='alumni_admin'),
 
     #ajax choruses
     url(r'get_choruses', views.getChoruses, name='get_choruses'),

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,11 +7,11 @@
 		<title>Yale Glee Club Alumni Website</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
         {% load static %}
-		<link rel="stylesheet" href="{% static 'alumni/new.min.css' %}">
+		<link rel="stylesheet" href="{% static 'alumni/dist/semantic.min.css' %}">
+
 	</head>
-    <body style="background-color:#2185D0;">
+    <body>
             <div class="ui top fixed menu">
                 <div class="item left">
                     YGC Alumni Website
@@ -27,6 +28,8 @@
             {% endblock %}
     </body>
 
-    <script src="{% static "alumni/jquery-3.1.1.js" %}"></script>
-    <script src="{% static "alumni/new.js" %}"></script>
+    <!-- JavaScript scripts -->
+
+    <script src="{% static 'alumni/jquery-3.1.1.js' %}"></script>
+    <script src="{% static 'alumni/dist/semantic.min.js' %}"></script>
 </html>
