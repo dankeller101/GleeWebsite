@@ -16,3 +16,4 @@ class unapprovedMember(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'city', 'type')
     exclude = ['user']
     readonly_fields = ['first_name', 'last_name', 'city', 'type']
+
