@@ -16,42 +16,35 @@
                             YGC Alumni Database
                         </h2>
                     </div>
-                    <form class="ui form">
+                    <form class="ui form" action="{% url 'alumni:login_name' %}" method="post">
+                        {% csrf_token %}
                         <div>
                             <lable class="ui label">
                                 Username
                             </lable>
-                            <input type="text"/>
+                            <input type="text" name="email"/>
                         </div>
 
                         <div>
                             <lable class="ui label">
                                 Password
                             </lable>
-
-                            <input type="password"/>
+                            <input type="password" name="password"/>
                         </div>
                         <div class="ui horizontal divider">
                             Or
                         </div>
-                        <h2 class="ui header">Login with LinkedIn</h2>
-{#                    TODO:  FIX client ID, etc.#}
-                    <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=775rr0dby015ec&redirect_uri=https%3A%2F%2Fwww.example.com%2Fauth%2Flinkedin&state=987654321&scope=r_basicprofile">
-                        <img src="{% static 'alumni/Sign-in-Small---Default.png' %}" />
-                    </a>
                         <div class="ui grid">
                             <div class="ui centered row">
                                 <div class="ui four wide column">
                                     <br>
-                                    <button class="ui green button">
-                                        Enter
-                                    </button>
+                                    <input type="submit" class="ui green button" />
                                 </div>
                             </div>
                             <div class="ui row" style="margin-top: -10px;">
                                 <div class="ui eight wide column">
                                     <label class="ui label">Don't have an account?</label><br>
-                                    <a>Register an Account</a>
+                                    <a href="{% url 'alumni:register_form' %}">Register an Account</a>
                                 </div>
                                 <div class="ui eight wide column">
                                     <label class="ui label">Forgot your password?</label>

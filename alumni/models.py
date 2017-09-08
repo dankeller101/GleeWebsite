@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 
 
 # Create your models here.
@@ -50,6 +51,13 @@ class Chorus(models.Model):
     def __str__(self):
         return self.name
 
+class AuthorizationToken(models.Model):
+    name = models.CharField(max_length=200, default='New Token')
+    authorization_code = models.CharField(max_length=300)
+    delete_date = models.DateField(default=datetime.datetime.today() + datetime.timedelta(days=30))
+
+    def __str__(self):
+        return self.name
 
 
 

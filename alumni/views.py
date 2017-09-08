@@ -31,7 +31,7 @@ def login_form(request):
         user = authenticate(username=username, password=password)
 
         if not user:
-            return render(request, 'predictor/error.html', {
+            return render(request, 'alumni/error_page.html', {
                 'error_message': "Failed to log you in.",
             })
 
